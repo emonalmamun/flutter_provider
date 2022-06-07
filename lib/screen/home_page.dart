@@ -1,6 +1,5 @@
 
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_provider/provider/count_provider.dart';
 import 'package:provider/provider.dart';
@@ -24,7 +23,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    //print("Whole widget Build");
+    print("Whole widget Build");
     final countProvider = Provider.of<CountProvider>(context, listen: false);
     return Scaffold(
       appBar: AppBar(title: const Text("Provider",),centerTitle: true,),
