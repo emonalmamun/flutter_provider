@@ -18,6 +18,7 @@ class _HomePageState extends State<HomePage> {
     super.initState();
     Timer.periodic(const Duration(seconds: 2), (timer) {
       final countProvider = Provider.of<CountProvider>(context, listen: false);
+      //countProvider.updateCount();
       countProvider.updateCount();
     });
   }

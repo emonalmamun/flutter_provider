@@ -8,6 +8,7 @@ class CountProvider with ChangeNotifier {
 
   void updateCount(){
     _count++;
+    //notifyListeners();
     notifyListeners();
   }
 }
