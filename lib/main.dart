@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => CountProvider(),
       child: MaterialApp(
-        title: 'Provider State Management 1111',
+        title: 'Provider State Management',
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
