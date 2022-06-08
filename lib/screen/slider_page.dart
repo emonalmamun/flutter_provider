@@ -22,7 +22,7 @@ class _SliderPageState extends State<SliderPage> {
           children: [
             Consumer<SliderProvider>(builder: (BuildContext context, value, Widget? child) {
               return Slider(
-                  value: value.value,
+                  value: value.number,
                   onChanged: (val){
                     value.updateValue(val);
                   }
@@ -36,7 +36,7 @@ class _SliderPageState extends State<SliderPage> {
                     child: Container(
                       height: 100,
                       decoration: BoxDecoration(
-                        color: Colors.green.withOpacity(value.value),
+                        color: Colors.green.withOpacity(value.number),
                       ),
                       child: const Center(child: Text("Container 1")),
                     ),
@@ -45,7 +45,7 @@ class _SliderPageState extends State<SliderPage> {
                     child: Container(
                       height: 100,
                       decoration: BoxDecoration(
-                        color: Colors.blue.withOpacity(value.value),
+                        color: Colors.blue.withOpacity(value.number),
                       ),
                       child: const Center(child: Text("Container 2",)),
                     ),
