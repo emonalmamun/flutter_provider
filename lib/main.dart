@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_provider/provider/auth_provider.dart';
 import 'package:flutter_provider/provider/count_provider.dart';
 import 'package:flutter_provider/provider/favourite_provider.dart';
 import 'package:flutter_provider/provider/slider_provider.dart';
@@ -6,7 +7,10 @@ import 'package:flutter_provider/provider/theme_changer_provider.dart';
 import 'package:flutter_provider/screen/dark_mode/dark_theme_page.dart';
 import 'package:flutter_provider/screen/favourite/favourite_page.dart';
 import 'package:flutter_provider/screen/home_page.dart';
+import 'package:flutter_provider/screen/login/login_page.dart';
+import 'package:flutter_provider/screen/question/question_ans.dart';
 import 'package:flutter_provider/screen/slider_page.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -25,6 +29,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider(create: (_) => SliderProvider()),
         ChangeNotifierProvider(create: (_) => FavouriteItemProvider()),
         ChangeNotifierProvider(create: (_) => ThemeChangerProvider()),
+        ChangeNotifierProvider(create: (_) => AuthProvider()),
       ],
       child: Builder(
         builder: (BuildContext context) {
@@ -35,7 +40,10 @@ class MyApp extends StatelessWidget {
             themeMode: themeChanger.themeMode,
             theme: ThemeData(
               brightness: Brightness.light,
-              primarySwatch: Colors.blue,
+              primarySwatch: Colors.deepOrange,
+              textTheme: GoogleFonts.poppinsTextTheme(
+                Theme.of(context).textTheme,
+              ),
             ),
             darkTheme: ThemeData(
               brightness: Brightness.dark,
@@ -46,7 +54,7 @@ class MyApp extends StatelessWidget {
                 backgroundColor: Colors.green,
               )
             ),
-            home: const DarkThemePage(),
+            home: const LoginPage(),
           );
         },
       )
